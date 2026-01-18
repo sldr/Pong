@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8uaksaunkjip"]
+
+[ext_resource type="PackedScene" uid="uid://biegir36qhsjn" path="res://Wall.tscn" id="1_wbfu4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wbfu4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="WallLine2D" parent="CanvasLayer/CenterContainer" instance=ExtResource("1_wbfu4")]
+
+[node name="CenterContainer2" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="WallLine2D" parent="CanvasLayer/CenterContainer2" instance=ExtResource("1_wbfu4")]
+rotation = 3.1415927
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(552, 294)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_wbfu4")
