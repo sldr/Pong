@@ -1,21 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://biegir36qhsjn"]
+[gd_scene load_steps=5 format=3 uid="uid://biegir36qhsjn"]
 
 [ext_resource type="Script" uid="uid://dhydhlprqglt6" path="res://Wall.cs" id="1_l6igm"]
+[ext_resource type="Script" uid="uid://bbaguyaob7oec" path="res://WallCollisionShape2D.cs" id="2_rytl6"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l6igm"]
 bounce = 1.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l6igm"]
 normal = Vector2(0, 1)
-distance = 200.0
+distance = 100.0
 
 [node name="WallLine2D" type="Line2D"]
-points = PackedVector2Array(0, 0, 0, 200)
+points = PackedVector2Array(0, 0, 0, 100)
 script = ExtResource("1_l6igm")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_l6igm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="WallCollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_l6igm")
 debug_color = Color(0.9363353, 0.12260852, 0.5523828, 0.41960785)
+script = ExtResource("2_rytl6")
