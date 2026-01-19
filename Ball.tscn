@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://jgwwwawu5pmv"]
+
+[ext_resource type="Script" uid="uid://c3idniwwmdya5" path="res://Ball.cs" id="1_lww6v"]
+[ext_resource type="Script" uid="uid://kudjrddrsa08" path="res://CircleVisualNode2D.cs" id="2_3tj6u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lww6v"]
+radius = 5.0
+
+[node name="BallCharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_lww6v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_lww6v")
+
+[node name="CircleVisualNode2D" type="Node2D" parent="."]
+script = ExtResource("2_3tj6u")
+BallRadious = null

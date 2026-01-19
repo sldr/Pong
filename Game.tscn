@@ -3,8 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://biegir36qhsjn" path="res://Wall.tscn" id="1_wbfu4"]
 [ext_resource type="Script" uid="uid://gtamt47mp5y7" path="res://Game.cs" id="1_xkndl"]
 [ext_resource type="PackedScene" uid="uid://dhe2gihdlackt" path="res://Player.tscn" id="3_u44n3"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_wbfu4"]
+[ext_resource type="PackedScene" uid="uid://jgwwwawu5pmv" path="res://Ball.tscn" id="4_sb48q"]
 
 [node name="RootNode2D" type="Node2D"]
 script = ExtResource("1_xkndl")
@@ -70,11 +69,7 @@ grow_vertical = 2
 [node name="SpawnRightNode2D" type="Node2D" parent="CanvasLayer/RightCenterContainer"]
 position = Vector2(-10, 0)
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(552, 294)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_wbfu4")
-
 [node name="PlayerSprite2D" parent="." instance=ExtResource("3_u44n3")]
 position = Vector2(10, 0)
+
+[node name="BallCharacterBody2D" parent="." instance=ExtResource("4_sb48q")]
