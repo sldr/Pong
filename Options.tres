@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dgix1hfx8c61f"]
+
+[ext_resource type="Script" uid="uid://jm8fum2k0n83" path="res://OptRes.cs" id="1_2hgns"]
+
+[resource]
+script = ExtResource("1_2hgns")
+isSettingsSaved = true
