@@ -3,9 +3,9 @@ using System;
 
 public partial class OptRes : Resource
 {
-	[Export] public bool isSettingsSaved = false;
+	public bool isSettingsSaved = false;
 
-	[ExportCategory("Volume Settings")]
+	[ExportCategory("Stored Settings")]
 
 	[ExportGroup("Stored Volume Settings")]
 	[Export(PropertyHint.Range, "-80,6,0.5")] public float MainVolumeDb = 0;
@@ -16,7 +16,12 @@ public partial class OptRes : Resource
 	[Export] public bool MusicVolMuted = false;
 	[Export] public bool SFXVolMuted = false;
 
-	[ExportGroup("Default Settings")]
+	[ExportGroup("Stored Gameplay Settings")]
+	[Export] public int StoredMovementSpeed = 200;
+	[Export] public int StoredBallSpeed = 300;
+
+	[ExportCategory("Default Settings")]
+	[ExportSubgroup("Volume Defaults")]
 	[Export(PropertyHint.Range, "-80,6,0.5")] public float DefaultMainVolumeDb = 0;
 	[Export(PropertyHint.Range, "-80,6,0.5")] public float DefaultMusicVolumeDb = 0;
 	[Export(PropertyHint.Range, "-80,6,0.5")] public float DefaultSFXVolumeDb = 0;
@@ -24,5 +29,10 @@ public partial class OptRes : Resource
 	[Export] public bool DefaultMainVolMuted = false;
 	[Export] public bool DefaultMusicVolMuted = false;
 	[Export] public bool DefaultSFXVolMuted = false;
+	
+	[ExportSubgroup("Gameplay Defaults")]
+
+	[Export] public int DefaultMovementSpeed = 200;
+	[Export] public int DefaultBallSpeed = 300;
 }
 
