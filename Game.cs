@@ -23,6 +23,7 @@ public partial class Game : Node2D
         ball.GlobalPosition = gp;
         //player.GlobalPosition.X = this.GetNode<Node2D>("CanvasLayer/CenterContainer4/SpawnLeftNode2D").GlobalPosition.X;
         //this.player.Transform. = this.GetNode<Node2D>("CanvasLayer/CenterContainer4/SpawnLeftNode2D").Transform;
+        player.WaitForServe(ball);
     }
 
     private void Game_SizeChanged()

@@ -15,4 +15,3 @@ shape = SubResource("CircleShape2D_lww6v")
 
 [node name="CircleVisualNode2D" type="Node2D" parent="."]
 script = ExtResource("2_3tj6u")
-BallRadious = null
