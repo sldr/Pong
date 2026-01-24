@@ -4,6 +4,7 @@ using System;
 public partial class Ball : CharacterBody2D
 {
 
+    [Export] public float _Speed = 300f;
     private float _BallRadious = 5f;
     private bool _NeedsApplyBallRadious = false;
 
@@ -33,10 +34,15 @@ public partial class Ball : CharacterBody2D
         }
     }
 
+    public override void _PhysicsProcess(double delta)
+    {
+        base._PhysicsProcess(delta);
+        MoveAndSlide();
+    }
+
     public override void _Process(double delta)
     {
         base._Process(delta);
-        //this.GetChild<CircleVisualNode2D>(1).QueueRedraw();
     }
 
     public override void _Draw()

@@ -4,7 +4,7 @@ using System;
 public partial class Player : CharacterBody2D
 {
 
-    [Export] private float _Speed = 200f;
+    [Export] public float _Speed = 300f;
     private bool _WaitingForServe = false;
     private Ball _WaitingToServeBall;
     private Vector2 _WaitingToServeBallPosition;
@@ -27,6 +27,7 @@ public partial class Player : CharacterBody2D
 
     public override void _PhysicsProcess(double delta)
     {
+        Velocity = Velocity.MoveToward(Vector2.Zero, (float)(800.0 * delta));
         MoveAndSlide();
         if (_WaitingForServe) {
             // Keep ball and paddle in the same spot
@@ -70,6 +71,10 @@ public partial class Player : CharacterBody2D
     private void OnServe()
     {
         this._WaitingForServe = false;
+        Vector2 direction = new Vector2(1f, 1f);
+        this._WaitingToServeBall.Velocity = direction * this._WaitingToServeBall._Speed;
+        this._WaitingToServeBall.QueueRedraw();
+        GD.Print("Served!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
 
 }

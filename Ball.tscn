@@ -8,6 +8,7 @@ radius = 5.0
 
 [node name="BallCharacterBody2D" type="CharacterBody2D"]
 motion_mode = 1
+platform_on_leave = 1
 script = ExtResource("1_lww6v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

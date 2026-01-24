@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8uaksaunkjip"]
+[gd_scene load_steps=7 format=3 uid="uid://c8uaksaunkjip"]
 
 [ext_resource type="PackedScene" uid="uid://biegir36qhsjn" path="res://Wall.tscn" id="1_wbfu4"]
 [ext_resource type="Script" uid="uid://gtamt47mp5y7" path="res://Game.cs" id="1_xkndl"]
 [ext_resource type="PackedScene" uid="uid://dhe2gihdlackt" path="res://Player.tscn" id="3_u44n3"]
 [ext_resource type="PackedScene" uid="uid://jgwwwawu5pmv" path="res://Ball.tscn" id="4_sb48q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sb48q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t88pq"]
 
 [node name="RootNode2D" type="Node2D"]
 script = ExtResource("1_xkndl")
@@ -73,3 +77,15 @@ position = Vector2(-10, 0)
 position = Vector2(10, 0)
 
 [node name="BallCharacterBody2D" parent="." instance=ExtResource("4_sb48q")]
+
+[node name="JunkCharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(250, 221)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JunkCharacterBody2D"]
+shape = SubResource("CapsuleShape2D_sb48q")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(353, 215)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CapsuleShape2D_t88pq")

@@ -26,8 +26,6 @@ public partial class GameInputManager : Node
     {
         // Compute a 2D movement vector from input map actions
         Vector2 moveVector = Input.GetVector(MoveLeft, MoveRight, MoveUp, MoveDown);
-        GD.Print(moveVector);
-
         // Only emit if there is movement
         if (moveVector != Vector2.Zero)
             OnMove?.Invoke(moveVector);
